@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F1027D723318CDE009B7E3B /* Pokeball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1027D623318CDE009B7E3B /* Pokeball.swift */; };
 		3F1027D92331974C009B7E3B /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1027D82331974C009B7E3B /* Bag.swift */; };
+		3F1027DB233D71E2009B7E3B /* playerFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1027DA233D71E2009B7E3B /* playerFunctions.swift */; };
 		80455C812317339D00B9488C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80455C802317339D00B9488C /* main.swift */; };
 		80455C88231733C500B9488C /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80455C87231733C500B9488C /* Pokemon.swift */; };
 		80455C8A231733D500B9488C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80455C89231733D500B9488C /* Player.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		3F1027D623318CDE009B7E3B /* Pokeball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokeball.swift; sourceTree = "<group>"; };
 		3F1027D82331974C009B7E3B /* Bag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
+		3F1027DA233D71E2009B7E3B /* playerFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playerFunctions.swift; sourceTree = "<group>"; };
 		80455C7D2317339D00B9488C /* PokemonCMD */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PokemonCMD; sourceTree = BUILT_PRODUCTS_DIR; };
 		80455C802317339D00B9488C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		80455C87231733C500B9488C /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				80455C89231733D500B9488C /* Player.swift */,
 				3F1027D623318CDE009B7E3B /* Pokeball.swift */,
 				80455C8B23173EB000B9488C /* gameFunctions.swift */,
+				3F1027DA233D71E2009B7E3B /* playerFunctions.swift */,
 			);
 			path = PokemonCMD;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F1027DB233D71E2009B7E3B /* playerFunctions.swift in Sources */,
 				80455C812317339D00B9488C /* main.swift in Sources */,
 				3F1027D723318CDE009B7E3B /* Pokeball.swift in Sources */,
 				80455C8C23173EB000B9488C /* gameFunctions.swift in Sources */,

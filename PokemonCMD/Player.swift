@@ -15,17 +15,22 @@ struct Player {
     let gender: Gender
     //let numofPokemon: Int
     var bag: Bag
-    
-    func viewAllPokemon () {
+    //guard <some condition> else { do something }
+    func viewAllPokemon() {
+        guard bag.pokedex.count != 0 else {
+            print("lol no pokemon.")
+            return
+        }
+        print("Your Pokemon are:")
         for pokemon in bag.pokedex {
-            print(pokemon.name)
+            print("\t\(pokemon.name)")
         }
     }
     
     mutating func throwPokeball(pokemon: Pokemon) -> Pokemon?{
         //guard let p = optionalValue else { return something }
         guard var pokeball = bag.getPokeball(type: choosePokeball()) else {
-            print("lol no balls. The Pokemon got away")
+            print("lol no balls...")
             return nil
         }
         print("\(self.name) threw a \(pokeball.type.rawValue) ball!")
@@ -35,7 +40,7 @@ struct Player {
             print("You caught \(pokemon.name)!")
             return pokemon
         } else {
-            ("\(pokemon.name) broke out!")
+            print("\(pokemon.name) broke out!")
             return nil
         }
     }

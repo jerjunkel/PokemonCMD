@@ -12,48 +12,6 @@ enum PlayerChoice {
 case onePlayer, twoPlayer
 }
 
-func choosePokemon(player: Player, pokedex: [Pokemon]) -> Player {
-    var newPlayer = player
-    print ("Pick a Pokemon \(newPlayer.name.capitalized)!")
-    for pokemon in pokedex {
-        print(pokemon.name)
-    }
-    
-    let playerPokemon = getUserInput()
-    switch playerPokemon.lowercased() {
-    case "bulbasaur":
-        newPlayer.bag.add(pokemon: bulbasaur)
-    case "squirtle":
-        newPlayer.bag.add(pokemon: squirtle)
-    case "charmander":
-        newPlayer.bag.add(pokemon: charmander)
-    default:
-        newPlayer.bag.add(pokemon: pikachu)
-    }
-    
-    return newPlayer
-    
-}
-
-
-func choosePokeball() -> PokeballType {
-    print("Choose your Pokeball")
-    print("\t1. Ultra Ball\n\t2. Great Ball\n\t3. PokeBall\n\t4. Master Ball" )
-    let userChoice = getUserInput()
-    switch userChoice.lowercased() {
-    case "1":
-        return .ultra
-    case "2":
-       return .great
-    case "4":
-        return .master
-    default:
-      return .regular
-    }
-}
-
-
-
 func newGame() -> PlayerChoice  {
     while true {
         print ("Hello Player! Welcome to the World Of Pokemon!\nWould you like battle someone, or try to catch some Pokemon in one player mode?")
@@ -74,3 +32,20 @@ func newGame() -> PlayerChoice  {
 func getUserInput () -> String {
     return readLine()!.trimmingCharacters(in: .whitespacesAndNewlines)
 }
+
+func createPlayer (player: String) -> Player {
+    print("\(player.capitalized), What's your name?")
+    let name = getUserInput()
+    print("Are you a boy or girl?")
+    let genderChoice = getUserInput()
+    let gender: Gender
+    
+    if genderChoice == "boy" {
+        gender = .boy
+    }
+    else {
+        gender = .girl
+    }
+     return Player(name: name, gender: gender, bag: Bag())
+}
+
