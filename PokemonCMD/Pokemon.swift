@@ -15,14 +15,14 @@ struct Pokemon {
     let type: PokemonType
     let level: Int
     var isCaptured: Bool = false
-    var moves: [Move] = []
+    var moves: Set<Move> = Set()
     
     init(_ name: String, type: PokemonType, level: Int = 5, isCaptured: Bool = false, moves: [Move] = []) {
         self.name = name
         self.type = type
         self.level = level
         self.isCaptured = isCaptured
-        self.moves = moves
+        self.moves = Set(moves)
     }
     
     //Methods
@@ -37,7 +37,7 @@ struct Pokemon {
     
     mutating func learn(move: Move) {
         if type == move.type {
-            moves.append(move)
+            moves.insert(move)
         } else {
             print("\(name) cannot learn \(move.name)")
         }
