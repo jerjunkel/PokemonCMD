@@ -14,3 +14,11 @@ struct Move {
     let power: Int
     let name: String
 }
+
+//Extending a type
+//Conforming to the Hashable Protocol
+extension Move: Hashable {
+    static func == (lhs: Move, rhs: Move) -> Bool {
+        return (lhs.name.lowercased() == rhs.name.lowercased()) && lhs.type == rhs.type
+    }
+}
