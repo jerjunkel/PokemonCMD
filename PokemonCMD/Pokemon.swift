@@ -15,7 +15,15 @@ struct Pokemon {
     let type: PokemonType
     let level: Int
     var isCaptured: Bool = false
+    var moves: [Move] = []
     
+    init(_ name: String, type: PokemonType, level: Int = 5, isCaptured: Bool = false, moves: [Move] = []) {
+        self.name = name
+        self.type = type
+        self.level = level
+        self.isCaptured = isCaptured
+        self.moves = moves
+    }
     
     //Methods
     func attack() {
@@ -26,9 +34,18 @@ struct Pokemon {
         let arr = [true, false]
         return arr.randomElement()!
     }
+    
+    mutating func learn(move: Move) {
+        if type == move.type {
+            moves.append(move)
+        } else {
+            print("\(name) cannot learn \(move.name)")
+        }
+    }
 }
 
 enum PokemonType {
-    case fire, water, grass, electric
+    case fire, water, grass, electric, bug, dark
+    case dragon, fighting, flying, ghost, ground
+    case ice, normal, poison, psychic, rock, steel
 }
-

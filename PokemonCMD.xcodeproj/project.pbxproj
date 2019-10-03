@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A95A6D02345A46400A725DE /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A95A6CF2345A46400A725DE /* Move.swift */; };
 		3F1027D723318CDE009B7E3B /* Pokeball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1027D623318CDE009B7E3B /* Pokeball.swift */; };
 		3F1027D92331974C009B7E3B /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1027D82331974C009B7E3B /* Bag.swift */; };
 		3F1027DB233D71E2009B7E3B /* playerFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1027DA233D71E2009B7E3B /* playerFunctions.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A95A6CF2345A46400A725DE /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
 		3F1027D623318CDE009B7E3B /* Pokeball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokeball.swift; sourceTree = "<group>"; };
 		3F1027D82331974C009B7E3B /* Bag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
 		3F1027DA233D71E2009B7E3B /* playerFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playerFunctions.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				3F1027D623318CDE009B7E3B /* Pokeball.swift */,
 				80455C8B23173EB000B9488C /* gameFunctions.swift */,
 				3F1027DA233D71E2009B7E3B /* playerFunctions.swift */,
+				1A95A6CF2345A46400A725DE /* Move.swift */,
 			);
 			path = PokemonCMD;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 				80455C812317339D00B9488C /* main.swift in Sources */,
 				3F1027D723318CDE009B7E3B /* Pokeball.swift in Sources */,
 				80455C8C23173EB000B9488C /* gameFunctions.swift in Sources */,
+				1A95A6D02345A46400A725DE /* Move.swift in Sources */,
 				80455C8A231733D500B9488C /* Player.swift in Sources */,
 				3F1027D92331974C009B7E3B /* Bag.swift in Sources */,
 				80455C88231733C500B9488C /* Pokemon.swift in Sources */,

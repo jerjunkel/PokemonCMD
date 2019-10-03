@@ -8,11 +8,13 @@
 
 import Foundation
 
-let charmander = Pokemon(name: "Charmander", type: PokemonType.fire, level: 5, isCaptured: false)
-let squirtle = Pokemon(name: "Squirtle", type: PokemonType.water, level: 5, isCaptured: false)
-let bulbasaur = Pokemon(name: "Bulbasaur", type: PokemonType.grass, level: 5, isCaptured: false)
-let pikachu = Pokemon(name: "Pikachu", type: PokemonType.electric, level: 5, isCaptured: false)
+let charmander = Pokemon("Charmander", type: PokemonType.fire, level: 5, isCaptured: false)
+let squirtle = Pokemon("Squirtle", type: PokemonType.water, level: 5, isCaptured: false)
+let bulbasaur = Pokemon("Bulbasaur", type: PokemonType.grass, level: 5, isCaptured: false)
+let pikachu = Pokemon("Pikachu", type: PokemonType.electric, level: 5, isCaptured: false)
 let pokedex = [charmander, squirtle, bulbasaur, pikachu]
+
+let newPokemon = Pokemon("Canaan", type: .water, level: 10)
 
 //player1 = choosePokemon(player: player1, pokedex: pokedex)
 //player2 = choosePokemon(player: player2, pokedex: pokedex)

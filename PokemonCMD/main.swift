@@ -20,6 +20,13 @@ case PlayerChoice.onePlayer:
 
 case PlayerChoice.twoPlayer:
     print ("Let's start a battle!")
+    let superstorm = Move(type: .grass, power: 2000, name: "SuperStorm")
+    var doodoomon = Pokemon("doodoomon", type: .steel)
+    doodoomon.learn(move: superstorm)
+    print(doodoomon)
+    
+    
+
 }
 //
 ////
