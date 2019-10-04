@@ -12,17 +12,19 @@ import Foundation
 struct Pokemon {
     //Properties
     let name: String
-    let type: PokemonType
+    let type: Set<PokemonType>
     let level: Int
     var isCaptured: Bool = false
     var moves: Set<Move> = Set()
+    var HP: Int
     
-    init(_ name: String, type: PokemonType, level: Int = 5, isCaptured: Bool = false, moves: [Move] = []) {
+    init(_ name: String, type: PokemonType..., level: Int = 5, isCaptured: Bool = false, moves: [Move] = [], HP: Int =  1000) {
         self.name = name
-        self.type = type
+        self.type = Set(type)
         self.level = level
         self.isCaptured = isCaptured
         self.moves = Set(moves)
+        self.HP = HP
     }
     
     //Methods
@@ -35,8 +37,16 @@ struct Pokemon {
         return arr.randomElement()!
     }
     
+    mutating func getHit(damage: Int) {
+        if damage >= HP  {
+            HP = 0
+        } else {
+            HP -= damage
+        }
+    }
+    
     mutating func learn(move: Move) {
-        if type == move.type {
+        if type.contains(move.type) {
             moves.insert(move)
         } else {
             print("\(name) cannot learn \(move.name)")

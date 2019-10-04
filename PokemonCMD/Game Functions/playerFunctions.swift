@@ -16,11 +16,6 @@ let pokedex = [charmander, squirtle, bulbasaur, pikachu]
 
 let newPokemon = Pokemon("Canaan", type: .water, level: 10)
 
-//player1 = choosePokemon(player: player1, pokedex: pokedex)
-//player2 = choosePokemon(player: player2, pokedex: pokedex)
-
-//print(player1)
-//print(player2)
 
 func encounterWildPokemon(player: Player) -> Player {
     var updatedPlayer = player

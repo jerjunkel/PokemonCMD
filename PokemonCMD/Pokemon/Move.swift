@@ -8,11 +8,22 @@
 
 import Foundation
 
+enum HitRate: Int {
+    case high = 10, medium = 8, low = 5
+}
 
 struct Move {
     let type: PokemonType
     let power: Int
     let name: String
+    let hitChance: HitRate
+    
+    init (type: PokemonType, power: Int, name: String, hitChance: HitRate) {
+        self.type = type
+        self.power = power
+        self.name = name
+        self.hitChance = hitChance
+    }
 }
 
 //Extending a type
