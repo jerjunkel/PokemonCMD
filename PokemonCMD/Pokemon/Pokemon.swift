@@ -28,8 +28,33 @@ struct Pokemon {
     }
     
     //Methods
-    func attack() {
-        print("\(self.name) used tackle!!")
+    func attack(_ pokemon: inout Pokemon) {
+        print("What move would you like to use?")
+        let movesArray = Array(self.moves)
+        for (index, move) in movesArray.enumerated() {
+            print("\(index + 1). \(move.name)\n\tPow:\(move.power)\n\tAcc:\(move.hitChance.rawValue)")
+        }
+        //Allow user to try choosing move again
+        
+        guard let userChoice = Int(getUserInput()) else {
+            print("You have to choose a number")
+            return
+        }
+//
+//        let pokemonMove = movesArray[userChoice - 1]
+        
+        if movesArray.count >= userChoice {
+            switch userChoice {
+                case 1: pokemon.HP -= movesArray[0].power
+                case 2: pokemon.HP -= movesArray[1].power
+                case 3: pokemon.HP -= movesArray[2].power
+                case 4: pokemon.HP -= movesArray[3].power
+                default: print("You don't have that move.")
+            }
+        } else {
+            print("You don't have that move.")
+            
+        }
     }
     
     func getCaught() -> Bool {
