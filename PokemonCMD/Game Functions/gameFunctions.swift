@@ -49,3 +49,10 @@ func createPlayer (player: String) -> Player {
      return Player(name: name, gender: gender, bag: Bag())
 }
 
+//Battle function. Takes two playersß
+func decideTurn {
+    var isPlayerOneTurn = [true, false].randomElement()!
+    switch isPlayerOneTurn {
+        case true 
+    }
+}

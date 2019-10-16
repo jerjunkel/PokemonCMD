@@ -29,6 +29,7 @@ struct Pokemon {
     
     //Methods
     func attack(_ pokemon: inout Pokemon) {
+        while true {
         print("What move would you like to use?")
         let movesArray = Array(self.moves)
         for (index, move) in movesArray.enumerated() {
@@ -38,7 +39,7 @@ struct Pokemon {
         
         guard let userChoice = Int(getUserInput()) else {
             print("You have to choose a number")
-            return
+            continue
         }
 //
 //        let pokemonMove = movesArray[userChoice - 1]
@@ -51,9 +52,12 @@ struct Pokemon {
                 case 4: pokemon.HP -= movesArray[3].power
                 default: print("You don't have that move.")
             }
+    
+            print("\(name) used \(movesArray[userChoice - 1].name)")
+            break
         } else {
-            print("You don't have that move.")
-            
+            print("\(userChoice) is not an option.")
+            }
         }
     }
     

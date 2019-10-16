@@ -20,12 +20,26 @@ case PlayerChoice.onePlayer:
 
 case PlayerChoice.twoPlayer:
     print ("Let's start a battle!")
-    let superstorm = Move(type: .grass, power: 2000, name: "SuperStorm", hitChance: .high)
-    var doodoomon = Pokemon("doodoomon", type: .grass)
-    var waterBoy = Pokemon("Water Boy", type: .dark)
-    waterBoy.learn(move: bite)
-    doodoomon.learn(move: superstorm)
-    doodoomon.attack(&waterBoy)
+    var player1 = createPlayer(player: "Player 1")
+    var player2 = createPlayer(player: "Player 2")
+    let pokedex = [charmander, squirtle, bulbasaur, pikachu]
+    player1 = choosePokemon(player: player1, pokedex: pokedex)
+    player2 = choosePokemon(player: player2, pokedex: pokedex)
+    
+    
+    
+   
+    
+ 
+    
+    
+    //    let superstorm = Move(type: .grass, power: 2000, name: "SuperStorm", hitChance: .high)
+//    var doodoomon = Pokemon("doodoomon", type: .grass)
+//    var waterBoy = Pokemon("Water Boy", type: .dark)
+//    waterBoy.learn(move: bite)
+//    doodoomon.learn(move: superstorm)
+//    doodoomon.attack(&waterBoy)
+    
 }
 //
 ////
