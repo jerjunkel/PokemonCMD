@@ -25,6 +25,7 @@ case PlayerChoice.twoPlayer:
     let pokedex = [charmander, squirtle, bulbasaur, pikachu]
     player1 = choosePokemon(player: player1, pokedex: pokedex)
     player2 = choosePokemon(player: player2, pokedex: pokedex)
+    battle(player1: player1, player2: player2)
     
     
     

@@ -20,5 +20,7 @@ struct Bag {
     mutating func getPokeball(type: PokeballType) -> PokeBall? {
         return pokeballs[type]?.popLast()
     }
-    
+    func getPokemon() -> Pokemon {
+        return pokedex[0]
+    }
 }

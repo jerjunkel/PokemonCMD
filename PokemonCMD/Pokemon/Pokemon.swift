@@ -18,6 +18,10 @@ struct Pokemon {
     var moves: Set<Move> = Set()
     var HP: Int
     
+    var currentHP: Int {
+        return HP
+    }
+    
     init(_ name: String, type: PokemonType..., level: Int = 5, isCaptured: Bool = false, moves: [Move] = [], HP: Int =  1000) {
         self.name = name
         self.type = Set(type)

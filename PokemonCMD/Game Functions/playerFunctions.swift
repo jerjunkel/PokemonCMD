@@ -8,10 +8,10 @@
 
 import Foundation
 
-let charmander = Pokemon("Charmander", type: PokemonType.fire, level: 5, isCaptured: false)
-let squirtle = Pokemon("Squirtle", type: PokemonType.water, level: 5, isCaptured: false)
-let bulbasaur = Pokemon("Bulbasaur", type: PokemonType.grass, level: 5, isCaptured: false)
-let pikachu = Pokemon("Pikachu", type: PokemonType.electric, level: 5, isCaptured: false)
+var charmander = Pokemon("Charmander", type: PokemonType.fire, level: 5, isCaptured: false)
+var squirtle = Pokemon("Squirtle", type: PokemonType.water, level: 5, isCaptured: false)
+var bulbasaur = Pokemon("Bulbasaur", type: PokemonType.grass, level: 5, isCaptured: false)
+var pikachu = Pokemon("Pikachu", type: PokemonType.electric, level: 5, isCaptured: false)
 let pokedex = [charmander, squirtle, bulbasaur, pikachu]
 
 let newPokemon = Pokemon("Canaan", type: .water, level: 10)
@@ -51,12 +51,16 @@ func choosePokemon(player: Player, pokedex: [Pokemon]) -> Player {
     let playerPokemon = getUserInput()
     switch playerPokemon.lowercased() {
     case "bulbasaur":
+        bulbasaur.learn(move: vinewhip)
         newPlayer.bag.add(pokemon: bulbasaur)
     case "squirtle":
+        squirtle.learn(move: watergun)
         newPlayer.bag.add(pokemon: squirtle)
     case "charmander":
+        charmander.learn(move: ember)
         newPlayer.bag.add(pokemon: charmander)
     default:
+        pikachu.learn(move: thundershock)
         newPlayer.bag.add(pokemon: pikachu)
     }
     

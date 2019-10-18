@@ -50,9 +50,27 @@ func createPlayer (player: String) -> Player {
 }
 
 //Battle function. Takes two playersß
-func decideTurn {
+func battle(player1: Player, player2: Player) {
     var isPlayerOneTurn = [true, false].randomElement()!
-    switch isPlayerOneTurn {
-        case true 
+    var player1Pokemon = player1.bag.getPokemon()
+    var player2Pokemon = player2.bag.getPokemon()
+    
+    while true {
+        switch isPlayerOneTurn {
+        case true:
+            print("\(player1.name), it's your turn!")
+            player1Pokemon.attack(&player2Pokemon)
+        case false:
+            print("\(player2.name), it's your turn!")
+            player2Pokemon.attack(&player1Pokemon)
+        }
+        print(player1Pokemon.currentHP)
+        print(player2Pokemon.currentHP)
+       
+        isPlayerOneTurn.toggle()
+        
+       
     }
+
+    
 }
