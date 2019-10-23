@@ -16,13 +16,19 @@ struct Pokemon {
     let level: Int
     var isCaptured: Bool = false
     var moves: Set<Move> = Set()
-    var HP: Int
+    var HP: Int {
+        didSet {
+            if HP < 0 {
+                HP = 0
+            }
+        }
+    }
     
     var currentHP: Int {
         return HP
     }
     
-    init(_ name: String, type: PokemonType..., level: Int = 5, isCaptured: Bool = false, moves: [Move] = [], HP: Int =  1000) {
+    init(_ name: String, type: PokemonType..., level: Int = 5, isCaptured: Bool = false, moves: [Move] = [], HP: Int =  200) {
         self.name = name
         self.type = Set(type)
         self.level = level

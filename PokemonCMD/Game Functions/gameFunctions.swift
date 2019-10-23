@@ -64,12 +64,20 @@ func battle(player1: Player, player2: Player) {
             print("\(player2.name), it's your turn!")
             player2Pokemon.attack(&player1Pokemon)
         }
-        print(player1Pokemon.currentHP)
-        print(player2Pokemon.currentHP)
+        print("\(player1Pokemon.name)'s HP: \(player1Pokemon.currentHP)")
+        print("\(player2Pokemon.name)'s HP: \(player2Pokemon.currentHP)")
        
         isPlayerOneTurn.toggle()
         
+        if player1Pokemon.currentHP <= 0 {
+            print ("Congratulations \(player2.name)! You won!")
+        break
+        }
        
+        if player2Pokemon.currentHP <= 0 {
+            print ("Congratulations \(player1.name)! You won!")
+            break
+        }
     }
 
     

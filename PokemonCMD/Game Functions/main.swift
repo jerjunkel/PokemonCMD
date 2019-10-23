@@ -28,8 +28,7 @@ case PlayerChoice.twoPlayer:
     battle(player1: player1, player2: player2)
     
     
-//I just added this code here
-    //MASTER BEAST
+    
    
     
  
