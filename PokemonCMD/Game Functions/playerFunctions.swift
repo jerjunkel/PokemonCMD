@@ -44,6 +44,7 @@ func encounterWildPokemon(player: Player) -> Player {
 func choosePokemon(player: Player, pokedex: [Pokemon]) -> Player {
     var newPlayer = player
     print ("Pick a Pokemon \(newPlayer.name.capitalized)!")
+    
     for pokemon in pokedex {
         print(pokemon.name)
     }
@@ -51,16 +52,16 @@ func choosePokemon(player: Player, pokedex: [Pokemon]) -> Player {
     let playerPokemon = getUserInput()
     switch playerPokemon.lowercased() {
     case "bulbasaur":
-        bulbasaur.learn(move: vinewhip)
+        //bulbasaur.learn(move: vinewhip)
         newPlayer.bag.add(pokemon: bulbasaur)
     case "squirtle":
-        squirtle.learn(move: watergun)
+        //squirtle.learn(move: watergun)
         newPlayer.bag.add(pokemon: squirtle)
     case "charmander":
-        charmander.learn(move: ember)
+        //charmander.learn(move: ember)
         newPlayer.bag.add(pokemon: charmander)
     default:
-        pikachu.learn(move: thundershock)
+        ///pikachu.learn(move: thundershock)
         newPlayer.bag.add(pokemon: pikachu)
     }
     
@@ -83,4 +84,18 @@ func choosePokeball() -> PokeballType {
     default:
         return .regular
     }
+}
+
+func getPokedex() -> [Pokemon] {
+    let charmander = Pokemon("Charmander", type: PokemonType.fire, level: 5, isCaptured: false, moves: [tackle, ember, bite, dig])
+    let squirtle = Pokemon("Squirtle", type: PokemonType.water, level: 5, isCaptured: false, moves: [tackle, watergun, bite, dig])
+    let bulbasaur = Pokemon("Bulbasaur", type: PokemonType.grass, level: 5, isCaptured: false, moves: [tackle, vinewhip, bite, dig])
+    let pikachu = Pokemon("Pikachu", type: PokemonType.electric, level: 5, isCaptured: false, moves: [tackle, thundershock, bite])
+    let pidgey = Pokemon("Pidgey", type: PokemonType.flying, level: 5, isCaptured: false, moves: [gust, tackle])
+    let alakazam = Pokemon("Alakazam", type: PokemonType.psychic, level: 5, isCaptured: false, moves: [confusion, hyperbeam])
+    let dragonite = Pokemon("Dragonite", type: PokemonType.dragon, level: 5, isCaptured: false, moves: [gust, dragonrage, hyperbeam])
+    let diglett = Pokemon("Diglett", type: PokemonType.ground, level: 5, isCaptured: false, moves: [dig, rockthrow, tackle])
+    
+    
+    return [charmander, squirtle, bulbasaur, pikachu, diglett, alakazam, pidgey, dragonite]
 }

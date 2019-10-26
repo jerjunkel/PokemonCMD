@@ -23,8 +23,8 @@ case PlayerChoice.twoPlayer:
     var player1 = createPlayer(player: "Player 1")
     var player2 = createPlayer(player: "Player 2")
     let pokedex = [charmander, squirtle, bulbasaur, pikachu]
-    player1 = choosePokemon(player: player1, pokedex: pokedex)
-    player2 = choosePokemon(player: player2, pokedex: pokedex)
+    player1 = choosePokemon(player: player1, pokedex: getPokedex())
+    player2 = choosePokemon(player: player2, pokedex: getPokedex())
     battle(player1: player1, player2: player2)
     
     

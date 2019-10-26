@@ -9,12 +9,12 @@
 import Foundation
 
 enum HitRate: Int {
-    case high = 10, medium = 8, low = 5
+    case high = 10, medium = 8, low = 5, superlow = 3
 }
 
 struct Move {
     let type: PokemonType
-    let power: Int
+    let power: Int      
     let name: String
     let hitChance: HitRate
     
