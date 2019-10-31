@@ -55,6 +55,7 @@ func battle(player1: Player, player2: Player) {
     var player1Pokemon = player1.bag.getPokemon()
     var player2Pokemon = player2.bag.getPokemon()
     
+    print("Press 0 if you want to forfeit.")
     while true {
         switch isPlayerOneTurn {
         case true:

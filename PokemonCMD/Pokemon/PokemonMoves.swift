@@ -20,3 +20,4 @@ let dragonrage = Move(type: .dragon, power: 75, name: "Dragon Rage", hitChance: 
 let confusion = Move(type: .psychic, power: 60, name: "Confusion", hitChance: .medium)
 let rockthrow = Move(type: .rock, power: 55, name: "Rock Throw", hitChance: .high)
 let hyperbeam = Move(type: .normal, power: 100, name: "Hyper Beam", hitChance: .superlow)
+let splash = Move(type: .water, power: 0, name: "Splash", hitChance: .high)

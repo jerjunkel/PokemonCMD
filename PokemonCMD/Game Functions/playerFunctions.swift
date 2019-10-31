@@ -12,6 +12,7 @@ var charmander = Pokemon("Charmander", type: PokemonType.fire, level: 5, isCaptu
 var squirtle = Pokemon("Squirtle", type: PokemonType.water, level: 5, isCaptured: false)
 var bulbasaur = Pokemon("Bulbasaur", type: PokemonType.grass, level: 5, isCaptured: false)
 var pikachu = Pokemon("Pikachu", type: PokemonType.electric, level: 5, isCaptured: false)
+let magikarp = Pokemon("Magikarp", type: .water, level: 100, isCaptured: true, moves: [splash], HP: 2)
 let pokedex = [charmander, squirtle, bulbasaur, pikachu]
 
 let newPokemon = Pokemon("Canaan", type: .water, level: 10)
@@ -45,26 +46,20 @@ func choosePokemon(player: Player, pokedex: [Pokemon]) -> Player {
     var newPlayer = player
     print ("Pick a Pokemon \(newPlayer.name.capitalized)!")
     
-    for pokemon in pokedex {
-        print(pokemon.name)
+    for (index, pokemon) in pokedex.enumerated() {
+        print("\(index + 1). \(pokemon.name)")
     }
     
-    let playerPokemon = getUserInput()
-    switch playerPokemon.lowercased() {
-    case "bulbasaur":
-        //bulbasaur.learn(move: vinewhip)
-        newPlayer.bag.add(pokemon: bulbasaur)
-    case "squirtle":
-        //squirtle.learn(move: watergun)
-        newPlayer.bag.add(pokemon: squirtle)
-    case "charmander":
-        //charmander.learn(move: ember)
-        newPlayer.bag.add(pokemon: charmander)
-    default:
-        ///pikachu.learn(move: thundershock)
-        newPlayer.bag.add(pokemon: pikachu)
+    
+    guard let userChoice = Int(getUserInput()), userChoice > 0 &&
+        userChoice <= pokedex.count else {
+        print("You get Magikarp...Fool...")
+        newPlayer.bag.add(pokemon: magikarp)
+        return newPlayer
     }
     
+    let playerPokemon = pokedex[userChoice - 1]
+    newPlayer.bag.add(pokemon: playerPokemon)
     return newPlayer
     
 }

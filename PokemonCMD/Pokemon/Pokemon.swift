@@ -40,33 +40,41 @@ struct Pokemon {
     //Methods
     func attack(_ pokemon: inout Pokemon) {
         while true {
-        print("What move would you like to use?")
-        let movesArray = Array(self.moves)
-        for (index, move) in movesArray.enumerated() {
-            print("\(index + 1). \(move.name)\n\tPow:\(move.power)\n\tAcc:\(move.hitChance.rawValue)")
-        }
-        //Allow user to try choosing move again
-        
-        guard let userChoice = Int(getUserInput()) else {
-            print("You have to choose a number")
-            continue
-        }
-//
-//        let pokemonMove = movesArray[userChoice - 1]
-        
-        if movesArray.count >= userChoice {
-            switch userChoice {
+            print("What move would you like to use?")
+            let movesArray = Array(self.moves)
+            for (index, move) in movesArray.enumerated() {
+                print("\(index + 1). \(move.name)\n\tPow:\(move.power)\n\tAcc:\(move.hitChance.rawValue)")
+            }
+            //Allow user to try choosing move again
+            
+            guard let userChoice = Int(getUserInput()) else {
+                print("You have to choose a number")
+                continue
+            }
+            
+            guard userChoice != 0 else  {
+                pokemon.HP = 0
+                return
+            }
+            
+            guard userChoice > 0 else {
+                print("That is not an option")
+                return
+            }
+    
+            if movesArray.count >= userChoice {
+                switch userChoice {
                 case 1: pokemon.HP -= movesArray[0].power
                 case 2: pokemon.HP -= movesArray[1].power
                 case 3: pokemon.HP -= movesArray[2].power
                 case 4: pokemon.HP -= movesArray[3].power
                 default: print("You don't have that move.")
-            }
-    
-            print("\(name) used \(movesArray[userChoice - 1].name)")
-            break
-        } else {
-            print("\(userChoice) is not an option.")
+                }
+                
+                print("\(name) used \(movesArray[userChoice - 1].name)")
+                break
+            } else {
+                print("\(userChoice) is not an option.")
             }
         }
     }
